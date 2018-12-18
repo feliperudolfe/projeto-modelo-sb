@@ -1,0 +1,25 @@
+body {
+	background: #eee;
+}
+
+h1 {
+	padding-bottom: 30px;
+}
+
+#conteudo {
+	background: #fbfdfd;
+	max-width: 850px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 20px 30px 40px;
+	margin-top: 3%;
+}
+
+.navbar {
+	min-height: 75px;
+	background: #b95353;
+}
+
+.swal2-cancel {
+    margin-left: 10px;
+}

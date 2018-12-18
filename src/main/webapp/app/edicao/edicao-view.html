@@ -1,0 +1,56 @@
+<meta content="charset=UTF-8" />
+<div id="edicao-view" data-ng-controller="edicaoController as ctrl" >
+
+	<h1>Edição de pessoa</h1>
+
+	<form>
+
+		<div class="row" >
+			<div class="col-md-12" >
+				<div class="form-group">
+			    	<label for="nome-completo">Nome completo:</label>
+			    	<input type="text" class="form-control" id="nome-completo" data-ng-model="ctrl.pessoa.nome" >
+			  	</div>
+			</div>
+		</div>
+
+		<div class="row" >
+
+			<div class="col-sm-6" >
+			  	<div class="form-group">
+			    	<label for="nome-completo">Gênero:</label>
+			    	<br>
+					<div class="radio-inline">
+						<label style="font-weight: 100;" >
+							<input type="radio" name="generos" id="masculino" value="M" data-ng-model="ctrl.pessoa.genero">
+							Masculino
+					  	</label>
+					</div>
+					<div class="radio-inline">
+					  	<label style="font-weight: 100;" >
+					    	<input type="radio" name="generos" id="feminino" value="F" data-ng-model="ctrl.pessoa.genero">
+					    	Feminino
+					  	</label>
+					</div>
+			    </div>
+		  	</div>
+
+		  	<div class="col-sm-6" >
+			  	<div class="form-group">
+			    	<label for="data-nascimento">Data de nascimento:</label>
+			    	<input type="date" class="form-control" id="data-nascimento" data-ng-model="ctrl.pessoa.dataNascimento" >
+			  	</div>
+		  	</div>
+
+	  	</div>
+
+		<div class="row" >
+			<div class="col-xs-12" style="text-align: right; float: left;" >
+				<button type="button" class="btn btn-primary" data-ng-click="ctrl.salvar()" >Salvar</button>
+				<button type="button" class="btn btn-danger" data-ng-click="ctrl.cancelar()" >Cancelar</button>
+			</div>
+		</div>
+
+	</form>
+
+</div>

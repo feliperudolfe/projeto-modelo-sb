@@ -1,0 +1,46 @@
+<meta content="charset=UTF-8" />
+<div id="index-view" data-ng-controller="indexController as ctrl" >
+
+	<h1>Listagem de pessoas</h1>
+
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Data de nasc.</th>
+					<th>Gênero</th>
+					<th>Registro</th>
+					<th>Atualização</th>
+					<th>#</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="pessoa in ctrl.pessoas" >
+					<td>{{pessoa.nome}}</td>
+					<td>{{pessoa.dataNascimento | date: "dd/MM/yyyy"}}</td>
+					<td>{{pessoa.genero == 'M' ? "Masculino" : "Feminino"}}</td>
+					<td>{{pessoa.registro | date: "dd/MM/yyyy 'às' hh:mm:ss"}}</td>
+					<td>{{pessoa.atualizacao | date: "dd/MM/yyyy 'às' hh:mm:ss"}}</td>
+					<td>
+						<button type="button" class="btn btn-sm btn-warning" class data-ng-click="ctrl.editar(pessoa.codigo)" >
+							<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-sm btn-danger" class data-ng-click="ctrl.remover(pessoa.codigo)" >
+							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+	<div class="row" >
+		<div class="col-xs-12" style="text-align: right; float: left;" >
+			<button type="button" class="btn btn-primary" data-ng-click="ctrl.cadastrar()" >Cadastrar</button>
+			<button type="button" class="btn btn-warning" data-ng-click="ctrl.teste()" >Teste</button>
+		</div>
+	</div>
+
+</div>
