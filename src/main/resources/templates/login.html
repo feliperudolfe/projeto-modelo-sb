@@ -12,59 +12,17 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 	<!-- Demo CSS -->
-	<style type="text/css">
+	<link rel="stylesheet" href="resources/css/estilo.css" >
 
-		.form-signin {
-			max-width: 330px;
-			padding: 15px;
-			margin: 0 auto;
-		}
-
-		.form-signin .form-signin-heading, .form-signin .checkbox {
-			margin-bottom: 10px;
-		}
-
-		.form-signin .checkbox {
-			font-weight: normal;
-		}
-
-		.form-signin .form-control {
-			position: relative;
-			height: auto;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-			padding: 10px;
-			font-size: 16px;
-		}
-
-		.form-signin .form-control:focus {
-			z-index: 2;
-		}
-
-		.form-signin input[type="email"] {
-			margin-bottom: -1px;
-			border-bottom-right-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-
-		.form-signin input[type="password"] {
-			margin-bottom: 10px;
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-		}
-
-	</style>
-
-	<title>Demo Phoebus - LOGIN</title>
+	<title>Rudolfe's Test - LOGIN</title>
 
 </head>
 <body>
 
-	<div id="msg" class="container" style="background: #fbfdfd; max-width: 420px; margin-top: 10%; padding: 0;" >
+	<div id="msg" class="container" style="max-width: 420px; margin-top: 10%; padding: 0;" >
 		<div th:if="${param.error}">
 			<div class="alert alert-danger" role="alert">
-				Usuário e/ou senha inválifos
+				Login e/ou senha inválidos
 			</div>
 	   	</div>
 		<div th:if="${param.logout}">
@@ -74,7 +32,7 @@
 		</div>
 	</div>
 
-	<div id="conteudo" class="container" style="background: #fbfdfd; max-width: 420px; border-radius: 5px; border: 1px solid #ccc; padding: 5px 15px 50px;" >
+	<div id="conteudo" class="container" style="background: #fbfdfd; max-width: 420px; border-radius: 5px; border: 1px solid #ccc; padding: 5px 15px 50px; margin-top: 0px" >
 
 		<form class="form-signin" th:action="@{/login}" method="post" >
 

@@ -5,13 +5,13 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.com.phoebus</groupId>
-	<artifactId>demo-phoebus</artifactId>
+	<groupId>br.com.feliperudolfe</groupId>
+	<artifactId>rudolfes-test-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo-phoebus</name>
-	<description>Demo project for Spring Boot</description>
+	<name>rudolfes-test-web</name>
+	<description>Projeto Web Rudolfe's test</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

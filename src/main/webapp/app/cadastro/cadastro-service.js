@@ -2,8 +2,8 @@
 
 	'use strict'
 
-	angular.module("demo.app").factory("cadastroService", cadastroService);
-	angular.module("demo.app").$injector = ['$http', 'urlConfig'];
+	angular.module("rudolfes-test.app").factory("cadastroService", cadastroService);
+	angular.module("rudolfes-test.app").$injector = ['$http', 'urlConfig'];
 
 	function cadastroService($http, urlConfig) {
 
@@ -18,15 +18,15 @@
 
 		return servico;
 	};// cadastroService()
-	
+
 	function _sucesso(response) {
 		response.data.status = response.status;
 		return response.data;
 	};// sucesso()
-	
+
 	function _erro(response) {
 		response.data.status = response.status;
 		return response.data;
 	};// erro()
-	
+
 })();

@@ -23,21 +23,15 @@
 			},// requestError
 
 			response : function(response) {
-
-				console.log("response: ", response);
 				if (response != undefined && response.data != undefined && response.data.mensagens != undefined && response.data.mensagens.length > 0) {
 					for (var i in response.data.mensagens) {
 						mensagemService.exibirMensagensSimples(response.data.mensagens[i]);
 					}// for
 				}// if
-//				if (response != undefined && response.data != undefined && response.data.mensagens != undefined && response.data.mensagens.length > 0) {
-//					mensagemService.exibirMensagensSimples(response.data.mensagens);
-//				}// if
 				return response;
 			},// response
 
 			responseError : function(response) {
-				console.log("response: ", response);
 				if (response != undefined && response.data != undefined && response.data.mensagens != undefined && response.data.mensagens.length > 0) {
 					for (var i in response.data.mensagens) {
 						mensagemService.exibirMensagensSimples(response.data.mensagens[i]);

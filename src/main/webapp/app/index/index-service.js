@@ -2,8 +2,8 @@
 
 	'use strict'
 
-	angular.module("demo.app").factory("indexService", indexService);
-	angular.module("demo.app").$injector = ['$http', 'urlConfig'];
+	angular.module("rudolfes-test.app").factory("indexService", indexService);
+	angular.module("rudolfes-test.app").$injector = ['$http', 'urlConfig'];
 
 	function indexService($http, urlConfig) {
 

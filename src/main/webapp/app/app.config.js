@@ -1,21 +1,21 @@
 /**
- * 
+ *
  */
 
 (function() {
-	
+
 	'use strict'
 
 	angular.module('app.config', ["ui.router"]);
-	
+
 	angular.module('app.config').value("urlConfig", {
 		base: window.location.origin + "/",// + "${servico.url}:${servico.porta}/",
 	});// baseConfig()
-	
+
 	angular.module('app.config').config(function($httpProvider) {
 		$httpProvider.interceptors.push("appInterceptor");
 	});// interceptors()
-	
+
 	angular.module('app.config').config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/');
@@ -26,7 +26,7 @@
 			name: 'index',
 			url: '/',
 			views: {
-				'public@': {
+				'view@': {
 					templateUrl: 'app/index/index-view.html',
 					resolve : {
 	    				load : function($ocLazyLoad) {
@@ -47,7 +47,7 @@
 			name: 'cadastro',
 			url: '/cadastro',
 			views: {
-				'public@': {
+				'view@': {
 					templateUrl: 'app/cadastro/cadastro-view.html',
 					resolve : {
 	    				load : function($ocLazyLoad) {
@@ -68,7 +68,7 @@
 			name: 'edicao',
 			url: '/edicao/:codPessoa',
 			views: {
-				'public@': {
+				'view@': {
 					templateUrl: 'app/edicao/edicao-view.html',
 					resolve : {
 	    				load : function($ocLazyLoad) {
@@ -86,5 +86,5 @@
 		})
 
 	});
-	
+
 })()

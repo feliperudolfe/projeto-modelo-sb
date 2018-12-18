@@ -3,32 +3,32 @@
 
 	'use strict'
 
-	angular.module("demo.app").controller("cadastroController", cadastroController);
-	angular.module("demo.app").$injector = ['cadastroService'];	
-	
+	angular.module("rudolfes-test.app").controller("cadastroController", cadastroController);
+	angular.module("rudolfes-test.app").$injector = ['cadastroService'];
+
 	function cadastroController($scope, $state, cadastroService) {
-		
+
 		var self = this;
 		self.pessoa = {};
 
-		(function init() { 
-			
+		(function init() {
+
 			self.pessoa = {
 				nome: "",
 				genero: "M",
 				dataNascimento: ""
 			};
-			
+
 		})();// init()
-		
+
 		self.cadastrar = function() {
 			_cadastrarPessoa(self.pessoa);
 		};// cadastrar()
-		
+
 		self.cancelar = function(codPessoa) {
 			$state.go("index");
 		};// cancelar()
-		
+
 		self.limpar = function() {
 			self.pessoa = {
 				nome: "",
@@ -36,7 +36,7 @@
 				dataNascimento: ""
 			};
 		};// limpar()
-		
+
 		function _cadastrarPessoa(pessoa) {
 			cadastroService.cadastrar(pessoa).then(function(response) {
 				if (response.status == "200") {
@@ -44,7 +44,7 @@
 				}// if
 			});// cadastrar()
 		};// _cadastrarPessoa()
-			
+
 	}// cadastroController()
-	
+
 })();
