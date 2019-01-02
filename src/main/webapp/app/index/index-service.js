@@ -8,19 +8,13 @@
 	function indexService($http, urlConfig) {
 
 		var servico = {
-			listar: listar,
-			remover: remover
+			listarProjetos: listarProjetos,
 		};
 
-		function listar() {
-			var url = urlConfig.base + "pessoa/listar";
+		function listarProjetos() {
+			var url = urlConfig.base + "projeto/listar";
 			return $http.get(url).then(_sucesso).catch(_erro);
-		};// listar()
-
-		function remover(codPessoa) {
-			var url = urlConfig.base + "pessoa/remover/";
-			return $http.delete(url, {params: {codPessoa: codPessoa}}).then(_sucesso).catch(_erro);
-		};// remover()
+		};// listarProjetos()
 
 		return servico;
 	};// indexService()
@@ -31,8 +25,6 @@
 	};// sucesso()
 
 	function _erro(response) {
-
-		console.log("response: ", response);
 		response.data.status = response.status;
 		return response.data;
 	};// erro()

@@ -7,8 +7,25 @@
 	'use strict'
 
 	angular.module("app.service", []);
+	angular.module("app.service").$injector = ['$http', 'urlConfig'];
+
 	angular.module("app.service").factory("mensagemService", mensagemService);
-		function mensagemService() {
+	angular.module("app.service").factory("rootService", rootService);
+
+	function rootService($http, urlConfig) {
+
+		return {
+			getUsuarioLogado: getUsuarioLogado
+		}
+
+		function getUsuarioLogado() {
+			var url = urlConfig.base + "usuario/getDados";
+			return $http.get(url).then(_sucesso).catch(_erro);
+		};// getUsuarioLogado()
+
+	};// rootService()
+
+	function mensagemService() {
 
 		return {
 			exibirMensagemSimples: exibirMensagemSimples,
@@ -36,7 +53,7 @@
 
 			const toast = swal.mixin({
 				toast: true,
-				position: 'top',
+				position: 'top-end',//'top',
 				showConfirmButton: false,
 				timer: 5000
 			});
@@ -70,7 +87,7 @@
 
 			const toast = swal.mixin({
 				toast: true,
-				position: 'top',
+				position: 'top-end',
 				showConfirmButton: true,
 				showCancelButton: true
 			});
@@ -97,6 +114,26 @@
 
 		}// exibirMensagemConfirmar()
 
-	};// exibirMensagensSimples()
+	};// mensagemService()
+
+	function _sucesso(response) {
+		response.data.status = response.status;
+		return response.data;
+	};// sucesso()
+
+	function _erro(response) {
+		response.data.status = response.status;
+		return response.data;
+	};// erro()
 
 })();
+
+function _sucesso(response) {
+	response.data.status = response.status;
+	return response.data;
+};// sucesso()
+
+function _erro(response) {
+	response.data.status = response.status;
+	return response.data;
+};// erro()

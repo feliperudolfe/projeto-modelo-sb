@@ -26,7 +26,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-		String[] resources = new String[] { "/resources/**"};
+		String[] resources = new String[] { "/resources/**", "/cadastro", "/esqueceuasenha"};
 
         http
             .authorizeRequests()

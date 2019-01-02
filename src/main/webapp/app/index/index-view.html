@@ -1,7 +1,9 @@
 <meta content="charset=UTF-8" />
 <div id="index-view" data-ng-controller="indexController as ctrl" >
 
-	<h1>Listagem de pessoas</h1>
+	<h4 class="titulo-topo" ><strong>lista</strong> de projetos</h4>
+
+	{{ctrl.projetos}}
 
 	<div class="table-responsive">
 		<table class="table table-striped">
@@ -16,8 +18,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-ng-repeat="pessoa in ctrl.pessoas" >
-					<td>{{pessoa.nome}}</td>
+				<tr data-ng-repeat="pessoa in ctrl.projetos" >
+					<td>{{pessoa.nomeCompleto}}</td>
 					<td>{{pessoa.dataNascimento | date: "dd/MM/yyyy"}}</td>
 					<td>{{pessoa.genero == 'M' ? "Masculino" : "Feminino"}}</td>
 					<td>{{pessoa.registro | date: "dd/MM/yyyy 'às' hh:mm:ss"}}</td>

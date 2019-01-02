@@ -34,15 +34,49 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<servico.profile>desenvolvimento</servico.profile>
+
+				<!-- Ambiente de execução -->
+				<ambiente>desenvolvimento</ambiente>
+
+				<!-- Configuração de datasource -->
+				<datasource.driver>com.mysql.cj.jdbc.Driver</datasource.driver> <!-- com.mysql.jdbc.Driver Deprecated -->
+				<datasource.url>jdbc:mysql://localhost:3306/rudolfes_test?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC</datasource.url>
+				<datasource.username>root</datasource.username>
+				<datasource.password>root</datasource.password>
+
+				<!-- Configuração de JPA/Hibernate -->
+				<jpa.show.sql>true</jpa.show.sql>
+				<jpa.hibernate.ddl.auto>update</jpa.hibernate.ddl.auto> <!-- create, create-drop, update, validate -->
+				<jpa.hibernate.maning.strategy>org.hibernate.cfg.ImprovedNamingStrategy</jpa.hibernate.maning.strategy>
+				<jpa.properties.hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</jpa.properties.hibernate.dialect>
+
+				<!-- Configurações do servidor -->
+				<servico.compression.enabled>true</servico.compression.enabled>
+				<servico.compression.min.response.size>1</servico.compression.min.response.size>
+				<servico.jetty.acceptors>2</servico.jetty.acceptors>
 				<servico.url>http://localhost</servico.url>
 				<servico.porta>80</servico.porta>
+
+				<!-- Debug -->
+				<debug>false</debug>
+
+				<!-- Logging -->
+				<log.file>rudolfes-test.log</log.file>
+				<log.path>/var/logs</log.path>
+				<log.level>INFO</log.level> <!-- ALL, DEBUG, INFO, WARN, ERROR, FATAL, OFF, TRACE -->
+
 			</properties>
 		</profile>
 
 	</profiles>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>br.com.feliperudolfe</groupId>
+			<artifactId>rudolfes-commons</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -101,6 +135,17 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 
 		<dependency>

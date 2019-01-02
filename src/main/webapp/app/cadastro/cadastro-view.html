@@ -1,19 +1,19 @@
 <meta content="charset=UTF-8" />
 <div id="cadastro-view" data-ng-controller="cadastroController as ctrl" >
-	
+
 	<h1>Cadastro de pessoa</h1>
-	
+
 	<form>
-	
+
 		<div class="row" >
 			<div class="col-md-12" >
 				<div class="form-group">
 			    	<label for="nome-completo">Nome completo:</label>
-			    	<input type="text" class="form-control" id="nome-completo" data-ng-model="ctrl.pessoa.nome" >
+			    	<input type="text" class="form-control" id="nome-completo" data-ng-model="ctrl.pessoa.nomeCompleto" >
 			  	</div>
 			</div>
 		</div>
-	
+
 		<div class="row" >
 
 			<div class="col-sm-6" >
@@ -34,16 +34,16 @@
 					</div>
 			    </div>
 		  	</div>
-		  	
+
 		  	<div class="col-sm-6" >
 			  	<div class="form-group">
 			    	<label for="data-nascimento">Data de nascimento:</label>
 			    	<input type="date" class="form-control" id="data-nascimento" data-ng-model="ctrl.pessoa.dataNascimento" >
 			  	</div>
 		  	</div>
-		  	
+
 	  	</div>
-	  	
+
 		<div class="row" >
 			<div class="col-xs-12" style="text-align: right; float: left;" >
 				<button type="button" class="btn btn-primary" data-ng-click="ctrl.cadastrar()" >Cadastrar</button>
@@ -52,5 +52,5 @@
 			</div>
 		</div>
 	</form>
-	
+
 </div>

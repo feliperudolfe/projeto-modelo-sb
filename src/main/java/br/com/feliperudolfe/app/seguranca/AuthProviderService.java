@@ -9,8 +9,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import br.com.feliperudolfe.demo.modelo.entidade.Usuario;
-import br.com.feliperudolfe.demo.service.UsuarioService;
+import br.com.feliperudolfe.modelo.entidade.Usuario;
+import br.com.feliperudolfe.service.UsuarioService;
 
 @Component
 public class AuthProviderService implements AuthenticationProvider {
@@ -23,7 +23,7 @@ public class AuthProviderService implements AuthenticationProvider {
 		String login = auth.getName();
 		String senha = auth.getCredentials().toString();
 
-		Usuario usuario = this.usuarioService.buscarUsuarioPorLoginESenha(login, senha);
+		Usuario usuario = this.usuarioService.buscarUsuarioPorEmailESenha(login, senha);
 		if (usuario != null) {
 			if (usuario.isEnabled()) {
 				return new UsernamePasswordAuthenticationToken(login, senha, usuario.getAuthorities());

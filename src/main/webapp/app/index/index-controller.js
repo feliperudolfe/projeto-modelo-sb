@@ -8,39 +8,43 @@
 	function indexController($scope, $state, indexService, mensagemService) {
 
 		var self = this;
-		self.pessoas = [];
+		self.projetos = [];
 
 		(function init() {
-			_listarPessoas();
+			_listarProjetos();
 		})();// init()
 
-		self.cadastrar = function() {
-			$state.go("cadastro");
-		};// cadastrar()
-
-		self.editar = function(codPessoa) {
-			$state.go("edicao", {
-				codPessoa : codPessoa
-			});
-		};// editar()
+//		self.cadastrar = function() {
+//			$state.go("cadastro");
+//		};// cadastrar()
+//
+//		self.editar = function(codProjeto) {
+//			$state.go("edicao", {
+//				codProjeto : codProjeto
+//			});
+//		};// editar()
 
 		self.remover = function(codPessoa) {
 			mensagemService.exibirMensagemConfirmar("question", "Confirmação",
 				"Deseja realmente excluir esta pessoa?", function() {
 					indexService.remover(codPessoa).then(
-							function(response) {
-								_listarPessoas();
-							});// _remover()
+						function(response) {
+							_listarProjetos();
+						});// _remover()
 				}, function() {
 					setTimeout(function() {}, 100);
 				});
 		};// remover()
 
-		function _listarPessoas() {
-			indexService.listar().then(function(response) {
-				self.pessoas = response.data;
-			});// _listarPessoas()
-		};// _listarPessoas()
+		function _listarProjetos() {
+			indexService.listarProjetos().then(function(response) {
+
+
+				console.log("response > ", response);
+
+				self.projetos = response.data;
+			});// listarProjetos()
+		};// _listarProjetos()
 
 	}// indexController()
 

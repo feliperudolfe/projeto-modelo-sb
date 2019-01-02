@@ -8,10 +8,10 @@ import br.com.feliperudolfe.comum.modelo.Mensagem;
 public class NegocioException extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 572415303334058658L;
-	
+
 	private List<Mensagem> mensagens;
 
 	public NegocioException(Mensagem... mensagens) {
@@ -25,10 +25,15 @@ public class NegocioException extends Exception {
 		this.mensagens = mensagens;
 	}
 
+	public NegocioException(String tipo, String texto) {
+		this.mensagens = new ArrayList<Mensagem>();
+		this.mensagens.add(new Mensagem(tipo, texto));
+	}
+
 	public List<Mensagem> getMensagens() {
 		return mensagens;
 	}
 
 
-	
+
 }
